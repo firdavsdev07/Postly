@@ -21,7 +21,6 @@ function PostCard({ post }) {
   const handleComment = (e) => {
     e.preventDefault();
     if (newComment.trim()) {
-      // In real app, this would be sent to backend
       setNewComment("");
     }
   };

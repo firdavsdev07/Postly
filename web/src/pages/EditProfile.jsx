@@ -10,11 +10,10 @@ function EditProfile() {
     website: "www.yourwebsite.com",
     email: "your.email@example.com",
     phoneNumber: "+1 (555) 123-4567",
-    gender: "prefer-not-to-say",
   });
 
   const [avatar, setAvatar] = useState(
-    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150"
+    "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150",
   );
   const [isLoading, setIsLoading] = useState(false);
   const [showRemovePhoto, setShowRemovePhoto] = useState(false);
@@ -50,7 +49,9 @@ function EditProfile() {
   };
 
   const removePhoto = () => {
-    setAvatar("https://via.placeholder.com/150x150/cccccc/666666?text=No+Photo");
+    setAvatar(
+      "https://via.placeholder.com/150x150/cccccc/666666?text=No+Photo",
+    );
     setShowRemovePhoto(false);
   };
 
@@ -121,10 +122,17 @@ function EditProfile() {
         </div>
 
         {/* Form */}
-        <form id="edit-profile-form" onSubmit={handleSubmit} className="space-y-6">
+        <form
+          id="edit-profile-form"
+          onSubmit={handleSubmit}
+          className="space-y-6"
+        >
           {/* Username */}
           <div>
-            <label htmlFor="username" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Username
             </label>
             <input
@@ -136,13 +144,17 @@ function EditProfile() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             />
             <p className="text-xs text-gray-500 mt-1">
-              In most cases, you'll be able to change your username back to {formData.username} for another 14 days.
+              In most cases, you'll be able to change your username back to{" "}
+              {formData.username} for another 14 days.
             </p>
           </div>
 
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Name
             </label>
             <input
@@ -154,13 +166,17 @@ function EditProfile() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             />
             <p className="text-xs text-gray-500 mt-1">
-              Help people discover your account by using the name you're known by: either your full name, nickname, or business name.
+              Help people discover your account by using the name you're known
+              by: either your full name, nickname, or business name.
             </p>
           </div>
 
           {/* Bio */}
           <div>
-            <label htmlFor="bio" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="bio"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Bio
             </label>
             <textarea
@@ -179,7 +195,10 @@ function EditProfile() {
 
           {/* Website */}
           <div>
-            <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="website"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Website
             </label>
             <input
@@ -195,7 +214,10 @@ function EditProfile() {
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email
             </label>
             <input
@@ -210,7 +232,10 @@ function EditProfile() {
 
           {/* Phone Number */}
           <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="phoneNumber"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Phone number
             </label>
             <input
@@ -222,63 +247,7 @@ function EditProfile() {
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
             />
           </div>
-
-          {/* Gender */}
-          <div>
-            <label htmlFor="gender" className="block text-sm font-medium text-gray-700 mb-2">
-              Gender
-            </label>
-            <select
-              id="gender"
-              name="gender"
-              value={formData.gender}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-            >
-              <option value="prefer-not-to-say">Prefer not to say</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="custom">Custom</option>
-            </select>
-            <p className="text-xs text-gray-500 mt-1">
-              This won't be part of your public profile.
-            </p>
-          </div>
         </form>
-
-        {/* Additional Actions */}
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="space-y-4">
-            <Link
-              to="/accounts/password/change"
-              className="block text-blue-500 hover:text-blue-600 text-sm font-medium"
-            >
-              Change password
-            </Link>
-            <button className="block text-blue-500 hover:text-blue-600 text-sm font-medium text-left">
-              Apps and websites
-            </button>
-            <button className="block text-blue-500 hover:text-blue-600 text-sm font-medium text-left">
-              Email and SMS
-            </button>
-            <button className="block text-blue-500 hover:text-blue-600 text-sm font-medium text-left">
-              Push notifications
-            </button>
-            <button className="block text-blue-500 hover:text-blue-600 text-sm font-medium text-left">
-              Manage contacts
-            </button>
-            <button className="block text-blue-500 hover:text-blue-600 text-sm font-medium text-left">
-              Privacy and security
-            </button>
-          </div>
-        </div>
-
-        {/* Temporarily disable account */}
-        <div className="mt-8 pt-8 border-t border-gray-200">
-          <button className="text-blue-500 hover:text-blue-600 text-sm font-medium">
-            Temporarily disable my account
-          </button>
-        </div>
       </div>
 
       {/* Remove Photo Modal */}
@@ -286,7 +255,9 @@ function EditProfile() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg max-w-sm w-full">
             <div className="p-6 text-center">
-              <h3 className="text-lg font-medium mb-2">Remove Profile Photo?</h3>
+              <h3 className="text-lg font-medium mb-2">
+                Remove Profile Photo?
+              </h3>
               <p className="text-gray-600 text-sm mb-6">
                 Are you sure you want to remove your current profile photo?
               </p>
