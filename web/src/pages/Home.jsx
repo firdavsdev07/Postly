@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PostCard from "../components/PostCard";
-import Stories from "../components/Stories";
 
 function Home() {
   const [posts] = useState([
@@ -118,11 +117,6 @@ function Home() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      {/* Stories Section */}
-      <div className="bg-white border border-gray-300 rounded-lg mb-6">
-        <Stories />
-      </div>
-
       {/* Posts Feed */}
       <div className="space-y-6">
         {posts.map((post) => (
